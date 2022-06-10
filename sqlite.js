@@ -146,7 +146,6 @@ sqlite.prototype.connect = function(db, password, algorithm){
 	}else{
 		this.con(1);
 	}
-
 	this.run("DROP TABLE IF EXISTS jayr");
 	var res = this.run("CREATE TABLE jayr(name TEXT)");
 	if(res.error){
