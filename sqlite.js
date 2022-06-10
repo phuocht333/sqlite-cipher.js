@@ -147,11 +147,12 @@ sqlite.prototype.connect = function(db, password, algorithm){
 		this.con(1);
 	}
 
+	this.run("DROP TABLE IF EXISTS jayr");
 	var res = this.run("CREATE TABLE jayr(name TEXT)");
 	if(res.error){
 		throw "Invalid Password! Please check your password or database name.";
 	}else{
-		this.run("DROP TABLE jayr")
+		this.run("DROP TABLE IF EXISTS jayr")
 	}
 
 	return this;	
@@ -294,12 +295,3 @@ sqlite.prototype.change = function(file, oldPassword, newPassword, algorithm, ne
 };
 
 module.exports = new sqlite();
-
-
-
-
-
-
-
- 
-
